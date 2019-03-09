@@ -3,6 +3,8 @@ const app = express();
 const homeRoute = require('./api/routes/home');
 const flatRoute = require('./api/routes/flat');
 const carRoute = require('./api/routes/car');
+const securityRoute = require('./api/routes/security');
+const residentRoute = require('./api/routes/resident');
 // const dataRoute = require('./api/routes/data');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
@@ -34,6 +36,8 @@ app.use((req, res, next) => {
 app.use('/', homeRoute);
 app.use('/api/flat', flatRoute);
 app.use('/api/car', carRoute);
+app.use('/security', securityRoute);
+app.use('/resident', residentRoute);
 
 app.use((req, res, next) => {
     const error = new Error('Not found');

@@ -38,16 +38,15 @@ const router = express.Router();
 // const checkAuth = require('../middleware/check-auth');
 
 //for controller
-const CarsController = require('../controller/flats');
+const CarsController = require('../controller/cars');
 
-router.get('/', CarsController.products_get_all);
+router.get('/', CarsController.orders_get_all);
 
-router.post('/', CarsController.products_post);
+router.post('/', CarsController.orders_post);
 
-router.get('/:id', CarsController.products_get_single);
+router.get('/:id', CarsController.orders_get_single);
 
-// router.patch('/:id', CarsController.products_patch);
+router.delete('/:id', CarsController.orders_delete_single);
 
-router.delete('/:id', CarsController.products_delete);
 
 module.exports = router;
